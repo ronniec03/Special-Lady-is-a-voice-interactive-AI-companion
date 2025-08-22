@@ -1,0 +1,87 @@
+## 🚀 Quick Start
+
+### 1. Clone or Download
+```bash
+# If using git
+git clone <repository-url>
+cd SpecialLady
+
+# Or download and extract the files to C:\Users\Justin\Documents\SpecialLady
+```
+
+### 2. Install Dependencies
+```bash
+# Run the automated installer
+install_enhanced_deps.bat
+
+# Or install manually
+pip install -r requirements_enhanced.txt
+```
+
+### 3. Configure API Keys
+Edit the configuration files in the `config/` directory:
+
+**config/claude_config.json**:
+```json
+{
+  "api_key": "YOUR_ANTHROPIC_API_KEY_HERE",
+  "model": "claude-3-5-sonnet-20241022"
+}
+```
+
+**config/openai_config.json**:
+```json
+{
+  "api_key": "YOUR_OPENAI_API_KEY_HERE",
+  "model": "gpt-4"
+}
+```
+
+### 4. Setup Voice System
+```bash
+# Run voice configuration (Windows)
+powershell -ExecutionPolicy Bypass -File setup_enhanced_voice.ps1
+```
+
+### 5. Test Installation
+```bash
+# Run system tests
+python test_enhanced_system.py
+```
+
+### 6. Launch Application
+```bash
+# Use the launcher
+launch_enhanced.bat
+
+# Or run directly
+python enhanced_companion.py
+```
+
+## 🔧 Configuration
+
+### Voice Settings
+Edit `config/stt_config.json` for speech recognition:
+```json
+{
+  "energy_threshold": 300,
+  "pause_threshold": 1.5,
+  "language": "en-US",
+  "timeout": 10
+}
+```
+
+Edit `config/tts_config.json` for text-to-speech:
+```json
+{
+  "voice": "en-US-AriaNeural",
+  "rate": "+0%",
+  "volume": "+0%",
+  "backup_voices": ["en-US-JennyNeural", "en-US-SaraNeural"]
+}
+```
+
+### Local LLM Setup
+1. Download a GGUF model file (e.g., Phi-3, Llama)
+2. Place in `models/` directory or update the path in code
+3. Recommended: Phi-3-mini-4k-instruct.Q4_0.gguf
